@@ -7,7 +7,7 @@ def location(cards, target, mid):
     elif cards[mid] > target:
         return 'right'
     elif cards[mid] < target:
-        retun 'left'
+        return 'left'
 
 
 def find(cards, target):
@@ -23,3 +23,7 @@ def find(cards, target):
             low = mid + 1
         return -1
 
+cards=[1,2,3,4,5,6,7,8,9]
+target=5
+result=find(cards,target)
+print(result)

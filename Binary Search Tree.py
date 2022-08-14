@@ -17,3 +17,21 @@ def parse_tuple(data):
     else:
         node = TreeNode(data)
     return node
+
+#helper function to display all the keys in a tree-like structure for easier visualization.
+def display_keys(node, space='\t', level=0):
+    
+    # If the node is empty
+    if node is None:
+        print(space*level + '∅')
+        return   
+    
+    # If the node is a leaf 
+    if node.left is None and node.right is None:
+        print(space*level + str(node.key))
+        return
+    
+    # If the node has children
+    display_keys(node.right, space, level+1)
+    print(space*level + str(node.key))
+    display_keys(node.left,space, level+1) 

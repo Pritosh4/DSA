@@ -5,12 +5,9 @@ def minmax(array, start, end):
     # If only 2 elements in the array
     elif start + 1 == end:
         if array[start] > array[end]:
-            arr_max = array[start]
-            arr_min = array[end]
+            return (array[end], array[start])
         else:
-            arr_max = array[end]
-            arr_min = array[start]
-        return (arr_min, arr_max)
+            return (array[start], array[end])
     # More than 2 elements in the array
     else:
         mid = (start + end) // 2

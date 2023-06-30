@@ -1,5 +1,5 @@
 '''
-Check if a number is a power of 2 or not. Solve in O(log n)
+Check if a number is a power of 2 or not. Solve in O(1)
 '''
 n = int(input())
 if (n & n-1) == 0:

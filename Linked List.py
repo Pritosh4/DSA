@@ -8,13 +8,13 @@ class LinkedList:
         self.head = None
 
     def print_ll(self):
-        n = self.head
-        if n is None:
+        ptr = self.head
+        if ptr is None:
             print('Linked List is empty')
         else:
-            while n is not None:
-                print(n.data, '-->', end=' ')
-                n = n.next
+            while ptr is not None:
+                print(ptr.data, '-->', end=' ')
+                ptr = ptr.next
 
     def add_begin(self, data):
         new_node = Node(data)
@@ -26,22 +26,22 @@ class LinkedList:
         if self.head is None:
             self.head = new_node
         else:
-            n = self.head
-            while n.next is not None:
-                n = n.next
-            n.next = new_node
+            ptr = self.head
+            while ptr.next is not None:
+                ptr = ptr.next
+            ptr.next = new_node
 
     def add_after(self, data, x):
         new_node = Node(data)
-        n = self.head
-        while n is not None and n.data != x:
-            n = n.next
+        ptr = self.head
+        while ptr is not None and ptr.data != x:
+            ptr = ptr.next
 
-        if n is None:
+        if ptr is None:
             print('That node does not exist')
         else:
-            new_node.next = n.next
-            n.next = new_node
+            new_node.next = ptr.next
+            ptr.next = new_node
 
     def add_before(self, data, x):
         new_node = Node(data)
@@ -51,16 +51,15 @@ class LinkedList:
             new_node.next = self.head
             self.head = new_node
         else:
-            n = self.head
-            while n.next is not None and n.next.data != x:
-                n = n.next
+            ptr = self.head
+            while ptr.next is not None and ptr.next.data != x:
+                ptr = ptr.next
 
-            if n.next is None:
+            if ptr.next is None:
                 print('That node does not exist')
             else:
-                new_node.next = n.next
-                n.next = new_node
-
+                new_node.next = ptr.next
+                ptr.next = new_nodeptr
     def del_begin(self):
         if self.head:
             self.head = self.head.next
@@ -73,10 +72,10 @@ class LinkedList:
         elif self.head.next is None:
             self.head = None
         else:
-            n = self.head
-            while n.next.next is not None:
-                n = n.next
-            n.next = None
+            ptr = self.head
+            while ptr.next.next is not None:
+                ptr = ptr.next
+            ptr.next = None
 
     def delete(self, x):
         if self.head is None:
@@ -84,13 +83,13 @@ class LinkedList:
         elif self.head.data == x:
             self.head = self.head.next
         else:
-            n = self.head
-            while n.next is not None and n.next.data != x:
-                n = n.next
-            if n.next is None:
+            ptr = self.head
+            while ptr.next is not None and ptr.next.data != x:
+                ptr = ptr.next
+            if ptr.next is None:
                 print('Node does not exist')
             else:
-                n.next = n.next.next
+                ptr.next = ptr.next.next
 
 
 

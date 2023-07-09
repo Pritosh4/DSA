@@ -61,6 +61,23 @@ class LinkedList:
                 new_node.next = n.next
                 n.next = new_node
 
+    def del_begin(self):
+        if self.head:
+            self.head = self.head.next
+        else:
+            print('Linked List is empty')
+
+    def del_end(self):
+        if self.head is None:
+            print('Linked List is empty')
+        elif self.head.next is None:
+            self.head = None
+        else:
+            n = self.head
+            while n.next.next is not None:
+                n = n.next
+            n.next = None
+
 
 
 
@@ -71,4 +88,6 @@ ll.add_end(40)
 ll.add_end(50)
 ll.add_after(45, 20)
 ll.add_before(5, 20)
+ll.del_begin()
+ll.del_end()
 ll.print_ll()

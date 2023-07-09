@@ -16,5 +16,14 @@ class LinkedList:
                 print(n.data)
                 n = n.next
 
-LL = LinkedList()
-LL.print_LL()
+    def add_begin(self, data):
+        new_node = Node(data)
+        new_node.next = self.head
+        self.head = new_node
+
+ll = LinkedList()
+ll.add_begin(10)
+ll.add_begin(20)
+ll.add_begin(44)
+ll.add_begin(50)
+ll.print_ll()

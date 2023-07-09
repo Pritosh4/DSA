@@ -78,6 +78,21 @@ class LinkedList:
                 n = n.next
             n.next = None
 
+    def delete(self, x):
+        if self.head is None:
+            print('Linked List is empty')
+        elif self.head.data == x:
+            self.head = self.head.next
+        else:
+            n = self.head
+            while n.next is not None and n.next.data != x:
+                n = n.next
+            if n.next is None:
+                print('Node does not exist')
+            else:
+                n.next = n.next.next
+
+
 
 
 
@@ -90,4 +105,5 @@ ll.add_after(45, 20)
 ll.add_before(5, 20)
 ll.del_begin()
 ll.del_end()
+ll.delete(10)
 ll.print_ll()

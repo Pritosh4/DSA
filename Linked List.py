@@ -31,9 +31,25 @@ class LinkedList:
                 n = n.next
             n.next = new_node
 
+    def add_after(self, data, x):
+        new_node = Node(data)
+        n = self.head
+        while n is not None and n.data != x:
+            n = n.next
+
+        if n is None:
+            print('That node does not exist')
+        else:
+            new_node.next = n.next
+            n.next = new_node
+
+
+
+
 ll = LinkedList()
 ll.add_begin(10)
 ll.add_begin(20)
 ll.add_end(40)
 ll.add_end(50)
+ll.add_after(45, 20)
 ll.print_ll()

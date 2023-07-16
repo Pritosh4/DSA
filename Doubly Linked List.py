@@ -27,3 +27,23 @@ class DoublyLinkedList:
             while ptr is not None:
                 print(ptr.data, '-->', end=' ')
                 ptr = ptr.prev
+
+    def add_begin(self, data):
+        new_node = Node(data)
+        if self.head is None:
+            self.head = new_node
+        else:
+            new_node.next = self.head
+            self.head.prev = new_node
+            self.head = new_node
+
+    def add_end(self, data):
+        new_node = Node(data)
+        if self.head is None:
+            self.head = new_node
+        else:
+            ptr = self.head
+            while ptr.next is not None:
+                ptr = ptr.next
+            ptr.next = new_node
+            new_node.prev = ptr

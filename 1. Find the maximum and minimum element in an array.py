@@ -1,4 +1,4 @@
-def minmax(array, start, end):
+9def minmax(array, start, end):
     # If only 1 element in the array
     if start == end:
         return (array[start], array[end])
